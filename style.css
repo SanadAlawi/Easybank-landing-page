@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+
+}
+
+:root {
+
+    /* ### Primary */
+    --Dark-Blue: hsl(233, 26%, 24%);
+    --Lime-Green: hsl(136, 65%, 51%);
+    --Bright-Cyan: hsl(192, 70%, 51%);
+
+    /* ### Neutral */
+    --Grayish-Blue: hsl(233, 8%, 62%);
+    --Light-Grayish-Blue: hsl(220, 16%, 96%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+
+    --primary-padding: 4em;
+    --secondary-padding: 2em;
+    --ordinary-padding: 1em;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* REUSABLE CSS STYLE */
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.title {
+    color: var(--Dark-Blue);
+    font-weight: 400;
+}
+.sub-title {
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+
+.desc {
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 4em;
+}
+
+.btn {
+    color: var(--White);
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right, var(--Lime-Green), var(--Bright-Cyan));
+    border-radius: 20px;
+    padding: 10px var(--ordinary-padding);
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+nav {
+    padding: 0 var(--primary-padding);
+}
+
+section,
+footer {
+    padding: var(--primary-padding) var(--primary-padding);
+}
+
+section {
+    min-height: 100vh;
+}
+
+/* REUSABLE CSS STYLE END */
+
+
+
+main {
+    /* padding: 0 var(--primary-padding); */
+}
+
+/* NAVBAR STYLE */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    --nav-height: 80px;
+    height: var(--nav-height);
+    background-color: white;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    /* position: relative; */
+}
+
+nav .open-nav,
+nav .close-nav {
+    display: none;
+    cursor: pointer;
+}
+
+nav .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav .links li {
+    width: 70px;
+    cursor: pointer;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav .links li:hover a,
+nav .links li.active a {
+    color: var(--Dark-Blue);
+}
+
+nav .links li::before {
+    content: '';
+    position: absolute;
+    top: calc((var(--nav-height) + 10px) / 2);
+    height: 4px;
+    width: 0;
+    background-image: linear-gradient(to right, var(--Lime-Green), var(--Bright-Cyan));
+    transition: 0.5s;
+
+}
+
+nav .links li:hover::before,
+nav .links li.active::before {
+    width: 100%;
+}
+
+nav ul li a {
+    color: var(--Grayish-Blue);
+}
+
+/* NAVBAR STYLE END */
+
+
+/* HERO SECTION STYLE */
+.hero {
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .img {
+    max-width: 900px;
+    position: relative;
+}
+
+.hero .img img {
+    width: 100%;
+}
+
+.hero .img .bg-intro {
+    transform: translate(100px, -100px) scale(1.5);
+}
+
+.hero .img .mockups {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+}
+
+/* HERO SECTION STYLE END */
+
+
+
+/* FEATURES SECTION STYLE */
+.features {
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.features .grid .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+/* FEATURES SECTION STYLE END */
+
+
+/* ARTICLES SECTION STYLE */
+.articles {
+    background-color: var(--Very-Light-Gray);
+}
+.articles .grid .article{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+}
+.articles .grid .article .article-content{
+    padding: var(--secondary-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.articles .grid .article .article-content .title{
+    cursor: pointer;
+}
+.articles .grid .article .article-content .title:hover{
+    color: var(--Lime-Green);
+}
+/* ARTICLES SECTION STYLE END */
+
+
+/* FOOTER SECTION STYLE */
+footer {
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+    padding: var(--secondary-padding) var(--primary-padding);
+}
+footer .social{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer .icons{
+    display: flex;
+    gap: 1em;
+}
+footer .icons img{
+    cursor: pointer;
+}
+footer .content span{
+    cursor: pointer;
+}
+footer .content span:hover{
+    color: var(--Lime-Green);
+}
+/* FOOTER SECTION STYLE END */
+
+
+.attribution {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 915px) {
+    :root {
+        --primary-padding: 2em
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    nav .open-nav {
+        display: inline-block;
+    }
+
+    nav .links {
+        position: absolute;
+        flex-direction: column;
+        gap: 1em;
+        background-color: var(--White);
+
+        top: -250%;
+        right: 1em;
+        left: 1em;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    nav .links li::before {
+        display: none;
+    }
+
+    nav .btn {
+        display: none;
+    }
+
+    nav.active .links {
+        top: 100%;
+        box-shadow: 0 0 50px 2px var(--Dark-Blue);
+    }
+
+    nav.active .close-nav {
+        display: inline-block;
+    }
+
+    nav.active .open-nav {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .hero {
+        flex-direction: column;
+        /* gap: 2em; */
+    }
+
+    .hero .img .bg-intro {
+        transform: translate(0, 0) scale(1.5);
+    }
+
+    .hero .img .mockups {
+        width: 100%;
+        left: 0;
+    }
+
+    .features .grid .feature {
+        align-items: center;
+    }
+
+    footer .grid .social{
+        align-items: center;
+        gap: 2em;
+    }
+    footer .grid .content{
+        align-items: center;
+    }
+}
