@@ -318,7 +318,7 @@ footer .content span:hover{
 
 @media only screen and (max-width: 650px) {
     .hero {
-        flex-direction: column;
+        flex-direction: column-reverse;
         /* gap: 2em; */
     }
 
